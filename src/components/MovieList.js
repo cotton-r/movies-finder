@@ -1,12 +1,18 @@
 import React from 'react';
+import { Card, Col, Row } from 'antd';
 
-const MovieList = (props) => {
+const MovieList = ({ movies }) => {
 
   return (
     <div className='movie-list-container'>
-        {props.movies.map((movie, index) => (
-            <div className='image-container'>
-                <img src={movie.Poster} alt='movie'></img>
+        {movies.map((movie) => (
+            <div className='image-container' key={movie.id}>
+                <img 
+                    className='movie-poster' 
+                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
+                    alt='movie' 
+                >
+                </img>
             </div>
         ))}
     </div>
